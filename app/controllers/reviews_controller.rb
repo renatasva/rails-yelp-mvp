@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_review, only: [ :new, :show ]
-  def show
+  before_action :set_review, only: [ :new, :index ]
+  def index
+    @reviews = Review.all.where(restaurant_id: @restaurant.id)
   end
 
   def new

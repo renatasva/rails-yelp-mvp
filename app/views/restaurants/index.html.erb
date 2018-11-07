@@ -1,0 +1,11 @@
+<h2 style="text-align:center">Find all restaurants in London</h2>
+
+<% @restaurants.each do |restaurant| %>
+  <h3> Restaurant: <%= restaurant.name %> </h3>
+  <p> Address: <%= restaurant.address %> </p>
+  <p> Phone number: <%= restaurant.phone_number %> </p>
+  <p> Category: <%= restaurant.category.capitalize %> </p>
+  <%= link_to 'Show', restaurant %>
+  <%= link_to 'Edit', edit_restaurant_path(restaurant) %>
+  <%= link_to 'Delete', restaurant, method: :delete, data: { confirm: "Restaurant will be permanently deleted. Do you want to continue?"} %>
+<% end %>
